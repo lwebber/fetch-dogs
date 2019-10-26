@@ -4,7 +4,14 @@ function watchForm() {
     $('#multiple').submit(event => {
         event.preventDefault();
         let input = $('input[type="text"]').val();
-        getDogImages(input);
+        if (input > 50) {
+            let txt = `<p>You can only ask for 50 dogs or less. Try again.</p>`
+            $('.results-images').html(txt);
+            //display the results section
+            $('.results').removeClass('hidden');
+        } else {
+            getDogImages(input);
+        }
     });
 
     function displayResults(responseJson) {
