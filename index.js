@@ -8,6 +8,7 @@ function watchForm() {
     });
 
     function displayResults(responseJson) {
+        console.log(responseJson.message);
         let txt = `<img src="${responseJson.message[0]}" class="results-img">`;
 
         for (let i = 1; i < responseJson.message.length; i++) {
